@@ -1,0 +1,196 @@
+/* Body and App Centering */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+   overflow: hidden; 
+}
+
+.App {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+.App.dark {
+  background-color: #333;
+  color: white;
+}
+
+.App.dark .task-list li {
+  background-color: #444;
+  border-color: #666;
+}
+
+.App.dark .input-container input,
+.App.dark .input-container button {
+  background-color: #555;
+  border-color: #777;
+  color: white;
+}
+
+.App.dark .buttons button {
+  background-color: #555;
+  color: white;
+}
+
+/* Headings */
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Input Section */
+.input-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-container input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.input-container button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-container button:hover {
+  background-color: #218838;
+}
+
+/* Task List */
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.task-list li.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.task-list li.favorite {
+  background-color: #fff8c6;
+}
+
+.task-list .buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Buttons */
+.task-list .favorite-btn {
+  background-color: #ffc107;
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task-list .favorite-btn:hover {
+  background-color: #e0a800;
+}
+
+.task-list .delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task-list .delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background-color: #ccc;
+  color: black;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.theme-toggle:hover {
+  background-color: #bbb;
+}
+
+/* Background Animation */
+@keyframes moveBackground {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%);
+  animation: moveBackground 10s linear infinite;
+  z-index: -1; /* Place behind other content */
+}
+/* Calendar Styles */
+.calendar-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.react-calendar {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.react-calendar__tile.has-task {
+  background-color: #ffeb3b;
+  color: black;
+}
+
+.react-calendar__tile:disabled {
+  background-color: #f0f0f0;
+}
